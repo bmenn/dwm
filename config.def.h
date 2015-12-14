@@ -61,6 +61,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *swarp_m1[] = { "swarp", "960", "540", NULL};
+static const char *swarp_m2[] = { "swarp", "2880", "540", NULL};
+static const char *swarp_m3[] = { "swarp", "4800", "540", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,6 +101,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,                       XK_w,      spawn,          {.v = swarp_m1 } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = swarp_m2 } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = swarp_m3 } },
 };
 
 /* button definitions */
